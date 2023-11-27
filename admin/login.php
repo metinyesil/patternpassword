@@ -70,16 +70,14 @@ let selectedPattern = [];
 
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
-    const dotId = dot.id.substring(3); // Remove 'dot' from ID to get the number
+    const dotId = dot.id.substring(3);
     const dotValue = parseInt(dotId);
 
     if (selectedPattern.includes(dotValue)) {
-      // If the dot is already in the pattern, remove it
       const index = selectedPattern.indexOf(dotValue);
       selectedPattern.splice(index, 1);
       dot.style.backgroundColor = '#161817';
     } else {
-      // If the dot is not in the pattern, add it
       selectedPattern.push(dotValue);
       dot.style.backgroundColor = 'green';
     }
